@@ -33,14 +33,14 @@ for x, target in val_loader:
     # Apply sigmoid
     out = torch.sigmoid(out)
 
-    samples_fire = target >= 0.5
-    samples_no_fire = target < 0.5
+    samples_fire = target >= 0.4
+    samples_no_fire = target < 0.4
 
     num_samples_fire += int(torch.sum(samples_fire).item())
     num_samples_no_fire += int(torch.sum(samples_no_fire).item())
 
-    ok_fire += int(torch.sum(out[samples_fire] >= 0.5).item())
-    ok_no_fire += int(torch.sum(out[samples_no_fire] < 0.5).item())
+    ok_fire += int(torch.sum(out[samples_fire] >= 0.4).item())
+    ok_no_fire += int(torch.sum(out[samples_no_fire] < 0.4).item())
 
 
 accuracy_fire = ok_fire/num_samples_fire
