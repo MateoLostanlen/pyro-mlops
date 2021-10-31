@@ -16,7 +16,7 @@ gdd.download_file_from_google_drive(file_id='1GudZUtTgDyhqxqZmF3-p-f645iMJeqRb',
 # Init
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 
-tf = transforms.Compose([transforms.Resize(size=(448)), transforms.CenterCrop(size=224),
+tf = transforms.Compose([transforms.Resize(size=(448)), transforms.CenterCrop(size=448),
                          transforms.ToTensor(), normalize])
 
 model = rexnet1_0x(pretrained=True).eval()
