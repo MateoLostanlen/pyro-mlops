@@ -18,7 +18,7 @@ jobs:
           # Report the diff
           echo "## Workspace vs. Main" > report.md
           git fetch --prune
-          dvc metrics diff main --targets test_score.json --show-md >> report.md
+          dvc metrics diff master --targets test_score.json --show-md >> report.md
           
           # Print out the failure modes
           echo "## Failure modes" >> report.md
