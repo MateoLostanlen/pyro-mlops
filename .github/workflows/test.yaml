@@ -26,6 +26,7 @@ jobs:
           # Send it!
           cml-send-comment report.md
 
-        - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Commit new test score file
+          file_pattern: test_score.json
